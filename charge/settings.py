@@ -145,6 +145,7 @@ INSTALLED_APPS = (
     'mptt',
     'aldryn_bootstrap3',
     'djangocms_forms',
+    'feedback_form'
 
 )
 
@@ -176,7 +177,7 @@ CMS_TEMPLATES = (
     ('fullwidth.html', 'Fullwidth'),
     ('sidebar_left.html', 'Sidebar Left'),
     ('sidebar_right.html', 'Sidebar Right'),
-    ('first.html', 'first')
+    ('first.html', 'first'),
     ('make.html', 'make')
 
 )
