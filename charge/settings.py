@@ -147,6 +147,7 @@ INSTALLED_APPS = (
     'djangocms_forms',
     'feedback_form'
 
+
 )
 
 LANGUAGES = (
@@ -210,6 +211,7 @@ THUMBNAIL_PROCESSORS = (
 )
 
 DJANGOCMS_FORMS_USE_HTML5_REQUIRED = True
+#DJANGOCMS_FORMS_WIDGET_CSS_CLASSES = {'__all__': ('btn', ) }
 
 #EMAIL_HOST = 'smtp.yandex.ru'
 #EMAIL_PORT = 465
