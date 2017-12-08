@@ -20,7 +20,7 @@ urlpatterns = [
         {'sitemaps': {'cmspages': CMSSitemap}}),
     url(r'^', include('djangocms_forms.urls')),
     url(r'^test/', views.dollar, name='test'),
-    url(r'^', views.base_form, name='test2'),
+    # url(r'^', views.base_form, name='test2'),
 ]
 
 urlpatterns += i18n_patterns(
