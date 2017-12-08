@@ -3,6 +3,8 @@ import urllib
 import datetime
 from xml.etree import ElementTree as ET
 
+from djangocms_forms.forms import FormFieldInlineForm
+
 
 def test(request):
     per = 'per'
@@ -13,10 +15,7 @@ def test(request):
 
 
 def dollar(request):
-
-
     id_dollar = "R01235"
-
 
     valuta = ET.parse(urllib.request.urlopen("http://www.cbr.ru/scripts/XML_daily.asp?date_req"))
 
@@ -27,3 +26,9 @@ def dollar(request):
 
     # return rub_dollar
     return render(request, 'base.html', {'rub_dollar': rub_dollar})
+
+
+def base_form(request):
+    var1 = FormFieldInlineForm
+    perem = var1
+    return render(request, 'make.html', {'perem': perem})
