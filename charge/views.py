@@ -8,7 +8,7 @@ from xml.etree import ElementTree as ET
 
 
 # from djangocms_forms.views import FormSubmission
-from djangocms_forms.models import FormSubmission
+from djangocms_forms.models import FormSubmission, FormDefinition
 
 
 def test(request):
@@ -38,5 +38,9 @@ def base_form(request):
     # index = var1.co_varnames.index('form_data')
     # value = var1.co_consts
 
-    perem = FormSubmission.objects.all()
-    return render(request, 'make.html', {'perem': perem})
+    records = FormSubmission.objects.first()
+    context = {
+        'records': records
+    }
+
+    return render(request, 'make.html',  context)
