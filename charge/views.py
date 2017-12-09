@@ -3,7 +3,12 @@ import urllib
 # import datetime
 from xml.etree import ElementTree as ET
 
+
 # from djangocms_forms.forms import FormBuilder
+
+
+# from djangocms_forms.views import FormSubmission
+from djangocms_forms.models import FormSubmission
 
 
 def test(request):
@@ -28,9 +33,10 @@ def dollar(request):
     return render(request, 'base.html', {'rub_dollar': rub_dollar})
 
 
-# def base_form(request):
-#     var1 = FormBuilder.save.__code__
-#     index = var1.co_varnames.index('form_data')
-#     value = var1.co_consts
-#     perem = value
-#     return render(request, 'make.html', {'perem': perem})
+def base_form(request):
+    # var1 = FormBuilder.save.__code__
+    # index = var1.co_varnames.index('form_data')
+    # value = var1.co_consts
+
+    perem = FormSubmission.objects.all()
+    return render(request, 'make.html', {'perem': perem})
