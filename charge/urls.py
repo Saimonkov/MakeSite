@@ -5,11 +5,12 @@ from __future__ import absolute_import, print_function, unicode_literals
 from cms.sitemaps import CMSSitemap
 from django.conf import settings
 from django.conf.urls import include, url
-from django.conf.urls.i18n import i18n_patterns
+#from django.conf.urls.i18n import i18n_patterns
 from django.contrib import admin
 from django.contrib.sitemaps.views import sitemap
 from django.contrib.staticfiles.urls import staticfiles_urlpatterns
 from django.views.static import serve
+from solid_i18n.urls import solid_i18n_patterns
 
 from charge import views
 
@@ -23,7 +24,7 @@ urlpatterns = [
     url(r'^count/', views.base_form, name='count'),
 ]
 
-urlpatterns += i18n_patterns(
+urlpatterns += solid_i18n_patterns(
     url(r'^admin/', include(admin.site.urls)),  # NOQA
     url(r'^', include('cms.urls')),
 

@@ -51,7 +51,7 @@ WSGI_APPLICATION = 'charge.wsgi.application'
 
 LANGUAGE_CODE = 'ru'
 
-TIME_ZONE = 'Asia/Almaty'
+TIME_ZONE = 'UTC'
 
 USE_I18N = True
 
@@ -111,7 +111,8 @@ MIDDLEWARE_CLASSES = (
     'cms.middleware.user.CurrentUserMiddleware',
     'cms.middleware.page.CurrentPageMiddleware',
     'cms.middleware.toolbar.ToolbarMiddleware',
-    'cms.middleware.language.LanguageCookieMiddleware'
+    'cms.middleware.language.LanguageCookieMiddleware',
+    'solid_i18n.middleware.SolidLocaleMiddleware',
 )
 
 INSTALLED_APPS = (
@@ -147,7 +148,6 @@ INSTALLED_APPS = (
     'djangocms_forms',
     'feedback_form'
 
-
 )
 
 LANGUAGES = (
@@ -168,6 +168,7 @@ CMS_LANGUAGES = {
     ],
     'default': {
         'redirect_on_fallback': True,
+        'fallbacks': ['ru'],
         'public': True,
         'hide_untranslated': False,
     },
@@ -212,21 +213,21 @@ THUMBNAIL_PROCESSORS = (
 )
 
 DJANGOCMS_FORMS_USE_HTML5_REQUIRED = True
-#DJANGOCMS_FORMS_WIDGET_CSS_CLASSES = {'__all__': ('btn', ) }
+# DJANGOCMS_FORMS_WIDGET_CSS_CLASSES = {'__all__': ('btn', ) }
 
-#EMAIL_HOST = 'smtp.yandex.ru'
-#EMAIL_PORT = 465
-#EMAIL_HOST_USER = 'saimon.kovalchuk@yandex.ru'
-#EMAIL_HOST_PASSWORD = 'yCtljq582994'
-#EMAIL_USE_TLS = True
-#SERVER_EMAIL = EMAIL_HOST_USER
-#DEFAULT_FROM_EMAIL = EMAIL_HOST_USER
+# EMAIL_HOST = 'smtp.yandex.ru'
+# EMAIL_PORT = 465
+# EMAIL_HOST_USER = 'saimon.kovalchuk@yandex.ru'
+# EMAIL_HOST_PASSWORD = 'yCtljq582994'
+# EMAIL_USE_TLS = True
+# SERVER_EMAIL = EMAIL_HOST_USER
+# DEFAULT_FROM_EMAIL = EMAIL_HOST_USER
 
-#EMAIL_HOST = 'smtp.gmail.com'
-#EMAIL_PORT = 587
-#EMAIL_HOST_USER = 's.kovalchuk1987@gmail.com'
-#EMAIL_HOST_PASSWORD = 'gCtljq582994'
-#EMAIL_USE_TLS = True
+# EMAIL_HOST = 'smtp.gmail.com'
+# EMAIL_PORT = 587
+# EMAIL_HOST_USER = 's.kovalchuk1987@gmail.com'
+# EMAIL_HOST_PASSWORD = 'gCtljq582994'
+# EMAIL_USE_TLS = True
 
 EMAIL_HOST = 'smtp.mail.ru'
 EMAIL_PORT = 2525
