@@ -38,9 +38,9 @@ def base_form(request):
     # index = var1.co_varnames.index('form_data')
     # value = var1.co_consts
 
-    records = FormSubmission.objects.first()
+    records_form = FormSubmission.objects.first()
     context = {
-        'records': records
+        'records_form': records_form
     }
 
-    return render(request, 'make.html',  context)
+    return render(request, 'count.html',  context)
