@@ -13,6 +13,7 @@ from django.views.static import serve
 from solid_i18n.urls import solid_i18n_patterns
 
 from charge import views
+from my_app.app_download.views import app_download
 
 admin.autodiscover()
 
@@ -22,6 +23,7 @@ urlpatterns = [
     url(r'^', include('djangocms_forms.urls')),
     url(r'^test/', views.dollar, name='test'),
     url(r'^count/', views.base_form, name='count'),
+    url(r'^app_download/', app_download, name='count'),
 ]
 
 urlpatterns += solid_i18n_patterns(

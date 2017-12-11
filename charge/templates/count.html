@@ -8,15 +8,15 @@
     <div class="container">
 
         {#        {% for record in records %}#}
-        {{ records_form.form_data }}
-        <br><br>
+{#        {{ records_form.form_data }}#}
+        <br>
         {% for record in records_form.form_data %}
             {#            {{ forloop.counter }}#}
             {% if forloop.counter == 1 %}
                 {% if record.value == True %}
-                    Урааааа! Тру
+{#                    Урааааа! Тру#}
                     {% else %}
-                    Бляяяяяяяяя! Фэлс!
+{#                    Бляяяяяяяяя! Фэлс!!!#}
                 {% endif %}
                 {{ record.label }}<span>:</span>{{ record.value }} <br>
             {% endif %}
