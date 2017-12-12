@@ -5,6 +5,7 @@
 import os
 import sys
 import subprocess
+import zipfile  # подключаем модуль
 from django.http import HttpResponse, HttpResponseRedirect
 from django.shortcuts import render, redirect
 
@@ -13,9 +14,18 @@ def link_project_folder():
     link = {
         'link': 'link'
     }
+
+
+    try:
+        newzip = zipfile.ZipFile(r'C:\MyProject\MakeSite\test.zip', 'w')  # создаем архив
+        print("Архив bdseoru.zip на диске С:/ создан.")
+        newzip.close()  # закрываем архив
+    except:
+        print("Что-то пошло не так...")
+
     #return render(self, 'count.html', link)
     #return HttpResponseRedirect('http://ya.ru')
-    return HttpResponse('<a href="#">ссылка</a>')
+    return HttpResponse('<a href="C:\MyProject\MakeSite\"' + '"test.zip">скачать</a>')
 
 
 def add_app(sParameter, name_app, puth_set):
