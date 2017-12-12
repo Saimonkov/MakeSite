@@ -8,20 +8,23 @@ import subprocess
 from django.http import HttpResponse
 
 
-def add_app(sParameter, name_app):
-    f = open('text.txt', 'r+')
+def add_app(sParameter, name_app, puth_set):
 
-    lines = f.readlines()
-    numOfLine = 0
+    with open(puth_set, 'r') as f:
+        text = f.read()
 
-    for temp in lines:
-        numOfLine += 1
-        if sParameter in temp:
-            numOfLine += 1
-            print(numOfLine)
-            f.writelines('%s' % name_app)
+    with open(puth_set, 'w') as f:
+        for line in text.splitlines():
+            line += '\n'
 
-    f.close()
+            if sParameter in line:
+
+                f.write(line)
+                f.write('    ')
+                f.write("'" + name_app + "'," +'\n')
+            else:
+                f.write(line)
+
     pass
 def app_download(request):
     # code = sys.getdefaultencoding()
@@ -34,17 +37,25 @@ def app_download(request):
     # print(os.getcwd())
     # print("Привет")
 
-    # project_folder = 'MakeSite_folder'
-    # main_cms = subprocess.call('git clone https://github.com/Saimonkov/django_cms_template.git %s' % project_folder)
-    #
-    # if main_cms == 0:
-    #     print("Success!")
-    #     os.chdir(os.path.join(os.getcwd(), "%s" % project_folder))
-    #     subprocess.call('git clone https://github.com/Saimonkov/MY_APP.git')
-    #
-    # else:
-    #     print("Error!")
+    project_folder = 'MakeSite_folder'
 
-    add_app('INSTALLED_APPS', 'name_app')
+    main_cms = subprocess.call('git clone https://github.com/Saimonkov/django_cms_template.git %s' % project_folder)
+
+    if main_cms == 0:
+        print("Success!")
+        os.chdir(os.path.join(os.getcwd(), "%s" % project_folder))
+        app_load = subprocess.call('git clone https://github.com/Saimonkov/MY_APP.git my_app')
+
+        if app_load == 0:
+            puth_set = os.path.join(os.getcwd(), 'django_cms_template', 'settings.py')
+            #print(puth_set)
+            add_app('INSTALLED_APPS = (', 'my_app.feedback_form', puth_set)
+        else:
+            print("Eroor!")
+
+    else:
+        print("Error!")
+
+
 
     return HttpResponse('Выполняется сборка...%s')

@@ -148,7 +148,8 @@ INSTALLED_APPS = (
     'djangocms_forms',
     'my_app.feedback_form',
     'my_app.app_download',
-
+    #this is dowload_app#
+    #end download_app#
 
 )
 
