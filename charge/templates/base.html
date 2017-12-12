@@ -44,6 +44,10 @@
     <h1>{{ per }}</h1>
     <h1>{{ rub_dollar }}</h1>
     <h2>Текст для проверки!!!!</h2>
+    {{ test }}
+    {% for message in messages %}
+    <li{% if message.tags %} class="{{ message.tags }}"{% endif %}>{{ message }}</li>
+    {% endfor %}
 {% endblock content %}
 
 <!-- Footer -->

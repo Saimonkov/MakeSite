@@ -13,7 +13,7 @@ from django.views.static import serve
 from solid_i18n.urls import solid_i18n_patterns
 
 from charge import views
-from my_app.app_download.views import app_download
+from my_app.app_download.views import app_download, test
 
 admin.autodiscover()
 
@@ -21,9 +21,10 @@ urlpatterns = [
     url(r'^sitemap\.xml$', sitemap,
         {'sitemaps': {'cmspages': CMSSitemap}}),
     url(r'^', include('djangocms_forms.urls')),
-    url(r'^test/', views.dollar, name='test'),
+    url(r'^dollar/', views.dollar, name='dollar'),
     url(r'^count/', views.base_form, name='count'),
     url(r'^app_download/', app_download, name='count'),
+    url(r'^test/', test, name='test'),
 ]
 
 urlpatterns += solid_i18n_patterns(
