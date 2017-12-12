@@ -3,7 +3,6 @@
   <component name="ChangeListManager">
     <list default="true" id="4e6dfc32-b5ac-44bc-9ca5-0f417ac694a2" name="Default" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change beforePath="$PROJECT_DIR$/my_app/app_download/views.py" afterPath="$PROJECT_DIR$/my_app/app_download/views.py" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="TRACKING_ENABLED" value="true" />
@@ -1017,7 +1016,14 @@
       <option name="project" value="LOCAL" />
       <updated>1513081704554</updated>
     </task>
-    <option name="localTasksCounter" value="27" />
+    <task id="LOCAL-00027" summary="without ru">
+      <created>1513082951447</created>
+      <option name="number" value="00027" />
+      <option name="presentableId" value="LOCAL-00027" />
+      <option name="project" value="LOCAL" />
+      <updated>1513082951447</updated>
+    </task>
+    <option name="localTasksCounter" value="28" />
     <servers />
   </component>
   <component name="ToolWindowManager">
