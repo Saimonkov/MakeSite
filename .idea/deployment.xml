@@ -26,7 +26,7 @@
       <paths name="Ruslan_MakeSite">
         <serverdata>
           <mappings>
-            <mapping deploy="/MakeSite" local="$PROJECT_DIR$" web="/" />
+            <mapping deploy="/" local="$PROJECT_DIR$" web="/" />
           </mappings>
         </serverdata>
       </paths>
