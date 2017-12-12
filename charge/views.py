@@ -21,7 +21,7 @@ def test(request):
 
 def dollar(request):
     id_dollar = "R01235"
-
+    #print(request)
     valuta = ET.parse(urllib.request.urlopen("http://www.cbr.ru/scripts/XML_daily.asp?date_req"))
 
     for line in valuta.findall('Valute'):

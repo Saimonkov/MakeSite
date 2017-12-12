@@ -5,11 +5,20 @@
 import os
 import sys
 import subprocess
-from django.http import HttpResponse
+from django.http import HttpResponse, HttpResponseRedirect
+from django.shortcuts import render, redirect
+
+
+def link_project_folder():
+    link = {
+        'link': 'link'
+    }
+    #return render(self, 'count.html', link)
+    #return HttpResponseRedirect('http://ya.ru')
+    return HttpResponse('<a href="#">ссылка</a>')
 
 
 def add_app(sParameter, name_app, puth_set):
-
     with open(puth_set, 'r') as f:
         text = f.read()
 
@@ -21,12 +30,20 @@ def add_app(sParameter, name_app, puth_set):
 
                 f.write(line)
                 f.write('    ')
-                f.write("'" + name_app + "'," +'\n')
+                f.write("'" + name_app + "'," + '\n')
+                #link_project_folder()
             else:
                 f.write(line)
 
     pass
+
 def app_download(request):
+    #link_project_folder()
+    #return HttpResponse("Как-то так!")
+    #return HttpResponseRedirect('http://rambler.ru')
+    return link_project_folder()
+
+def app_download2(request):
     # code = sys.getdefaultencoding()
     # os.system('git clone https://github.com/Saimonkov/django_cms_template.git MakeSite_folder')
     # os.chdir(os.path.join(os.getcwd(), "MakeSite_folder"))
@@ -48,14 +65,12 @@ def app_download(request):
 
         if app_load == 0:
             puth_set = os.path.join(os.getcwd(), 'django_cms_template', 'settings.py')
-            #print(puth_set)
+            # print(puth_set)
             add_app('INSTALLED_APPS = (', 'my_app.feedback_form', puth_set)
         else:
             print("Eroor!")
 
     else:
         print("Error!")
-
-
 
     return HttpResponse('Выполняется сборка...%s')
