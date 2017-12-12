@@ -2,6 +2,27 @@
 <project version="4">
   <component name="PublishConfigData" autoUpload="On explicit save action" serverName="Ruslan_MakeSite" createEmptyFolders="true" filePermissions="420" folderPermissions="493" autoUploadExternalChanges="true" showNewOnSourceInSync="false" showNewOnTargetInSync="false">
     <serverData>
+      <paths name="Copy of project-level server 'Oscar'">
+        <serverdata>
+          <mappings>
+            <mapping local="$PROJECT_DIR$" web="/" />
+          </mappings>
+        </serverdata>
+      </paths>
+      <paths name="Copy of project-level server 'Oscar' (1)">
+        <serverdata>
+          <mappings>
+            <mapping local="$PROJECT_DIR$" web="/" />
+          </mappings>
+        </serverdata>
+      </paths>
+      <paths name="Perm">
+        <serverdata>
+          <mappings>
+            <mapping local="$PROJECT_DIR$" web="/" />
+          </mappings>
+        </serverdata>
+      </paths>
       <paths name="Ruslan_MakeSite">
         <serverdata>
           <mappings>
